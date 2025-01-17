@@ -4,6 +4,45 @@ import * as readline from "readline";
 
 const todoManager = new TodoManager();
 
+console.log("***RUNNING TESTS***")
+
+console.log("Add a few todos");
+
+const todo1: Todo = {
+  id: 10,
+  title: "Learn TypeScript",
+  description: "Learn how to use TypeScript to build Node.js applications",
+  completed: false
+};
+
+const todo2: Todo = {
+  id: 6,
+  title: "physical exercise",
+  description: "Go for a run",
+  completed: false
+};
+
+todoManager.addTodo(todo1);
+todoManager.addTodo(todo2);
+
+console.log("Lists all todos");
+
+console.log(todoManager.listAllTodos());
+
+console.log("Remove a todo");
+
+todoManager.removeTodoById(10); 
+
+console.log("Mark a todo as completed");
+
+todoManager.markTodoAsCompleted(6);
+
+console.log("List all todos again to show updates");
+
+console.log(todoManager.listAllTodos());
+
+console.log("Entry point to program reached, program will begin.");
+
 // Create an interface for reading input and output
 const rl = readline.createInterface({
   input: process.stdin,
